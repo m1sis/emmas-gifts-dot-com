@@ -4,194 +4,203 @@
 
 
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Image Links</title>
-    <style>
-      
-  /* Define the animation */
-  @keyframes zoomIn {
-    0% {
-      transform: scale(0) rotate3d(0,0,1, 200deg);
+
+  <meta charset="UTF-8">
+
+  <style>
+    .centered {
+      text-align: center;
     }
-    30% {
-      transform: scale(3) rotate3d(0,0,1, -5deg); 
+
+
+    /* Define the animation */
+    @keyframes zoomIn {
+      0% {
+        transform: scale(0) rotate3d(0, 0, 1, 200deg);
+      }
+
+      30% {
+        transform: scale(3) rotate3d(0, 0, 1, -5deg);
+      }
+
+      100% {
+        transform: scale(.8) rotate3d(0, 0, 1, 50000deg);
+      }
     }
-    100% {
-      transform: scale(.8) rotate3d(0,0,1, 50000deg);
+
+    /* Apply the animation to the preview image */
+    #preview1 img,
+    #preview2 img,
+    #preview3 img {
+      animation: zoomIn 0.45s ease;
     }
-  }
-
-  /* Apply the animation to the preview image */
-  #preview1 img,
-  #preview2 img,
-  #preview3 img {
-    animation: zoomIn 0.45s ease;
-  }
-
- 
-      
-      body {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
 
 
-      .linktable {
-        padding: 25px;
-        box-shadow: 5px 5px 50px #888888;
-        margin: 20px;
 
-      }
+    body {
+      max-width: 1200px;
+    }
 
-      /* Add a border to the table */
-      table {
-        border-collapse: collapse;
-        border: 25px;
-      }
 
-      /* Add a border to the table cells */
-      td {
-        border: 5px solid #7d7d7d;
-        padding: 5px;
-        border-style: none;
-      }
 
-      .rounded {
-        border-radius: 10px;
-      }
+    .linktable {
+      padding: 25px;
+      box-shadow: 5px 5px 50px #888888;
+      margin: 20px;
 
-      .fade-in-text {
+    }
+
+    /* Add a border to the table */
+    table {
+      border-collapse: collapse;
+      border: 25px;
+    }
+
+    /* Add a border to the table cells */
+    td {
+      border: 5px solid #7d7d7d;
+      padding: 5px;
+      border-style: none;
+    }
+
+    .rounded {
+      border-radius: 10px;
+    }
+
+    .fade-in-text {
+      opacity: 0;
+      animation: fade-in 2s forwards;
+    }
+
+    @keyframes fade-in {
+      0% {
         opacity: 0;
-        animation: fade-in 2s forwards;
       }
 
-      @keyframes fade-in {
-        0% {
-          opacity: 0;
-        }
-
-        100% {
-          opacity: 1;
-        }
-
+      100% {
+        opacity: 1;
       }
 
+    }
+  
 
-      .hoverfeat:hover {
-        animation: fade-in 10s;
-        animation-name: bounce;
-        animation-timing-function: ease-in;
+    .hoverfeat:hover {
+      animation: fade-in 10s;
+      animation-name: bounce;
+      animation-timing-function: ease-in;
+    }
+
+    @keyframes bounce {
+      0% {
+        background-color: #7d7d7d;
       }
 
-      @keyframes bounce {
-        0% {
-          background-color: #7d7d7d;
-        }
-
-        0% {
-          background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
-          background-repeat: round;
-          background-size: .1px;
-        }
-
-        11% {
-          background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
-          background-repeat: round;
-          background-size: .1px;
-        }
-
-        70% {
-          background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
-          background-repeat: round;
-          background-size: 900px;
-          background-color: red;
-        }
-
-        100% {
-          background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
-          background-repeat: round;
-          background-size: 10000px;
-        }
+      0% {
+        background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
+        background-repeat: round;
+        background-size: .1px;
       }
 
-      .bounce:hover {
-        animation-name: bounce;
-        animation-timing-function: ease-in;
+      11% {
+        background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
+        background-repeat: round;
+        background-size: .1px;
       }
-    </style>
+
+      70% {
+        background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
+        background-repeat: round;
+        background-size: 900px;
+        background-color: red;
+      }
+
+      100% {
+        background-image: url(https://momocon.wpenginepowered.com/wp-content/uploads/2019/03/mmc-logo-236x68.png);
+        background-repeat: round;
+        background-size: 10000px;
+      }
+    }
+
+    .bounce:hover {
+      animation-name: bounce;
+      animation-timing-function: ease-in;
+    }
+  </style>
+  <head>
+    <title>Image Links</title>
   </head>
 
 
- 
 
-<body>
-  <div class="linktable rounded hoverfeat">
-    <table style="margin: 0 auto">
-      <thead>
-        <tr>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>
-            <a class="fade in text" href="#" onclick="playAudio(); document.getElementById('preview1').style.display='block'">
-              gift #1 
-            </a>
-            <div id="preview1" style="display:none">
-              <img src="https://m.media-amazon.com/images/I/71FpcVMAMoL._AC_SY879_.jpg" alt="Image preview" style="max-width: 150px; max-height: 150px;">
-              <button onclick="stopAudio(); document.getElementById('preview1').style.display='none'">
-                Close
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a class="fade-in-text" style="animation-delay: 1s;" href="#" onclick="playAudio(); document.getElementById('preview2').style.display='block'">
-              gift #2
-            </a>
-            <div id="preview2" style="display:none">
-              <img src="https://m.media-amazon.com/images/I/512eyfPtOaL._AC_SX679_PIcountsize-7,TopRight,0,0_SH20_.jpg" alt="Image preview" style="max-width: 150px; max-height: 150px;">
-              <button onclick="stopAudio(); document.getElementById('preview2').style.display='none'">
-                Close
-              </button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a class="fade-in-text" style="animation-delay: 1s;" href="#" onclick="playAudio(); document.getElementById('preview3').style.display='block'">
-              gift #3
-            </a>
-            <div id="preview3" style="display:none">
-              <img src="https://m.media-amazon.com/images/I/61XHaREPS8L._AC_SX679_.jpg" alt="Image preview" style="max-width: 150px; max-height: 150px;">
-              <button onclick="stopAudio(); document.getElementById('preview3').style.display='none'">
-                Close
-              </button>
-            </div>
-          </td>
-        </tr>
-        <!-- add more rows as needed -->
-      </tbody>
-    </table>
-  </div>
 
-  <audio id="myAudio">
-    <source src="sound-effect.mp3" type="audio/mpeg">
-  </audio>
-  
-  <script>
-    var audio = document.getElementById("myAudio");
+  <body class="centered">
 
-    function playAudio() {
-      audio.currentTime = 0;
-      audio.play();
-    }
+    <div class="linktable rounded hoverfeat">
+      <table style="margin: 100 auto">
+        <thead>
+          <tr>
+            <th> ❤️ Emma's gifts! ❤️ </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <a class="fade in text, centered" href="#" onclick="playAudio(); document.getElementById('preview1').style.display='block'">
+                gift #1
+              </a>
+              <div id="preview1" style="display:none">
+                <img src="https://m.media-amazon.com/images/I/71FpcVMAMoL._AC_SY879_.jpg" alt="Image preview" style="max-width: 150px; max-height: 150px;">
+                <button onclick="stopAudio(); document.getElementById('preview1').style.display='none'">
+                  Close
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="fade-in-text" style="animation-delay: 1s;" href="#" onclick="playAudio(); document.getElementById('preview2').style.display='block'">
+                gift #2
+              </a>
+              <div id="preview2" style="display:none">
+                <img src="https://m.media-amazon.com/images/I/512eyfPtOaL._AC_SX679_PIcountsize-7,TopRight,0,0_SH20_.jpg" alt="Image preview" style="max-width: 150px; max-height: 150px;">
+                <button onclick="stopAudio(); document.getElementById('preview2').style.display='none'">
+                  Close
+                </button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a class="fade-in-text" style="animation-delay: 1s;" href="#" onclick="playAudio(); document.getElementById('preview3').style.display='block'">
+                gift #3
+              </a>
+              <div id="preview3" style="display:none">
+                <img src="https://m.media-amazon.com/images/I/61XHaREPS8L._AC_SX679_.jpg" alt="Image preview" style="max-width: 150px; max-height: 150px;">
+                <button onclick="stopAudio(); document.getElementById('preview3').style.display='none'">
+                  Close
+                </button>
+              </div>
+            </td>
+          </tr>
+          <!-- add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
 
-    function stopAudio() {
-      audio.pause();
-    }
-  </script>
-</body>
+    <audio id="myAudio">
+      <source src="LORD_HIT.wav" type="audio/wav">
+    </audio>
+
+    <script>
+      var audio = document.getElementById("myAudio");
+
+      function playAudio() {
+        audio.currentTime = 0;
+        audio.play();
+      }
+
+      function stopAudio() {
+        audio.pause();
+      }
+    </script>
+  </body>
